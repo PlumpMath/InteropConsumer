@@ -4,13 +4,13 @@ define([], function() {
  
 		 'name' : ''
  ,  
-		 'comprasId' : ''
+		 'clienteId' : ''
         },
         initialize: function() {
         },
         getDisplay: function(name) {
-			 if(name=='comprasId'){  
-                 var value = App.Utils.getModelFromCache('clienteComponent',this.get('comprasId'));
+			 if(name=='clienteId'){  
+                 var value = App.Utils.getModelFromCache('clienteComponent',this.get('clienteId'));
                  if(value) 
                  return value.get('name');
              }

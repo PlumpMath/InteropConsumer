@@ -15,7 +15,7 @@ public abstract class _CarroComprasConverter {
 			CarroComprasDTO dto = new CarroComprasDTO();
 				dto.setId(entity.getId());
 				dto.setName(entity.getName());
-				dto.setComprasId(entity.getComprasId());
+				dto.setClienteId(entity.getClienteId());
 			return dto;
 		}else{
 			return null;
@@ -27,7 +27,7 @@ public abstract class _CarroComprasConverter {
 			CarroComprasEntity entity=new CarroComprasEntity();
 			entity.setId(dto.getId());
 			entity.setName(dto.getName());
-			entity.setComprasId(dto.getComprasId());
+			entity.setClienteId(dto.getClienteId());
 			return entity;
 		}else {
 			return null;

@@ -72,7 +72,7 @@ public class CarroComprasPersistenceTest {
 		for(int i=0;i<3;i++){
 			CarroComprasEntity entity=new CarroComprasEntity();
 			entity.setName(generateRandom(String.class));
-			entity.setComprasId(generateRandom(Long.class));
+			entity.setClienteId(generateRandom(Long.class));
 			em.persist(entity);
 			data.add(entity);
 		}
@@ -82,7 +82,7 @@ public class CarroComprasPersistenceTest {
 	public void createCarroComprasTest(){
 		CarroComprasDTO dto=new CarroComprasDTO();
 		dto.setName(generateRandom(String.class));
-		dto.setComprasId(generateRandom(Long.class));
+		dto.setClienteId(generateRandom(Long.class));
 		
 		
 		CarroComprasDTO result=carroComprasPersistence.createCarroCompras(dto);
@@ -92,7 +92,7 @@ public class CarroComprasPersistenceTest {
 		CarroComprasEntity entity=em.find(CarroComprasEntity.class, result.getId());
 		
 		Assert.assertEquals(dto.getName(), entity.getName());	
-		Assert.assertEquals(dto.getComprasId(), entity.getComprasId());	
+		Assert.assertEquals(dto.getClienteId(), entity.getClienteId());	
 	}
 	
 	@Test
@@ -116,7 +116,7 @@ public class CarroComprasPersistenceTest {
 		CarroComprasDTO dto=carroComprasPersistence.getCarroCompras(entity.getId());
         Assert.assertNotNull(dto);
 		Assert.assertEquals(entity.getName(), dto.getName());
-		Assert.assertEquals(entity.getComprasId(), dto.getComprasId());
+		Assert.assertEquals(entity.getClienteId(), dto.getClienteId());
         
 	}
 	
@@ -135,7 +135,7 @@ public class CarroComprasPersistenceTest {
 		CarroComprasDTO dto=new CarroComprasDTO();
 		dto.setId(entity.getId());
 		dto.setName(generateRandom(String.class));
-		dto.setComprasId(generateRandom(Long.class));
+		dto.setClienteId(generateRandom(Long.class));
 		
 		
 		carroComprasPersistence.updateCarroCompras(dto);
@@ -144,7 +144,7 @@ public class CarroComprasPersistenceTest {
 		CarroComprasEntity resp=em.find(CarroComprasEntity.class, entity.getId());
 		
 		Assert.assertEquals(dto.getName(), resp.getName());	
-		Assert.assertEquals(dto.getComprasId(), resp.getComprasId());	
+		Assert.assertEquals(dto.getClienteId(), resp.getClienteId());	
 	}
 	
 	public <T> T generateRandom(Class<T> objectClass){

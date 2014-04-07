@@ -10,7 +10,7 @@ public abstract class _CarroComprasDTO {
 
 	private Long id;
 	private String name;
-	private Long comprasId;
+	private Long clienteId;
 
 	public Long getId() {
 		return id;
@@ -26,12 +26,12 @@ public abstract class _CarroComprasDTO {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Long getComprasId() {
-		return comprasId;
+	public Long getClienteId() {
+		return clienteId;
 	}
  
-	public void setComprasId(Long comprasid) {
-		this.comprasId = comprasid;
+	public void setClienteId(Long clienteid) {
+		this.clienteId = clienteid;
 	}
 	
 }

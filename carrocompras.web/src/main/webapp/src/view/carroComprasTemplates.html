@@ -5,7 +5,7 @@
     <thead>
     <tr>
 		 <th>name</th>
-		 <th>comprasId</th>
+		 <th>clienteId</th>
     <th>Actions</th>
     </tr>
     </thead>
@@ -13,7 +13,7 @@
     <% _.each(carroComprass, function(carroCompras) { %>
     <tr>
 		<td><%= htmlEncode(carroCompras.getDisplay('name')) %></td>
-		<td><%= htmlEncode(carroCompras.getDisplay('comprasId')) %></td>
+		<td><%= htmlEncode(carroCompras.getDisplay('clienteId')) %></td>
     <td>
     <% if(showEdit) {%>
     <a onclick="Backbone.trigger('<%= componentId %>-carroCompras-edit',{id:<%= carroCompras.id %>}); return false" >Edit</a> |
@@ -41,11 +41,11 @@
 		</div>
 		<div class="form-group" >
  
-			<label for="comprasidId">comprasId</label> 
-            <select class="form-control" id="comprasId" name="comprasId">
+			<label for="clienteidId">clienteId</label> 
+            <select class="form-control" id="clienteId" name="clienteId">
 			  <option value="">None</option>
-            <% cliente.each(function(comprasid) { %> 
-              <option value="<%=comprasid.get('id')%>" <% if(carroCompras.get('comprasId')==comprasid.get('id')) {%>selected<%}%> ><%=comprasid.get('name')%></option>
+            <% cliente.each(function(clienteid) { %> 
+              <option value="<%=clienteid.get('id')%>" <% if(carroCompras.get('clienteId')==clienteid.get('id')) {%>selected<%}%> ><%=clienteid.get('name')%></option>
             <% }); %>                
             </select>  
 		</div>

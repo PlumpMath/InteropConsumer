@@ -16,7 +16,7 @@ public abstract class _CarroComprasEntity {
 	@GeneratedValue(generator = "CarroCompras")
 	private Long id;
 	private String name;
-	private Long comprasId;
+	private Long clienteId;
 
 	public Long getId(){
 		return id;
@@ -32,11 +32,11 @@ public abstract class _CarroComprasEntity {
 	public void setName(String name){
 		this.name = name;
 	}
-	public Long getComprasId(){
-		return comprasId;
+	public Long getClienteId(){
+		return clienteId;
 	}
 	
-	public void setComprasId(Long comprasId){
-		this.comprasId = comprasId;
+	public void setClienteId(Long clienteId){
+		this.clienteId = clienteId;
 	}
 }

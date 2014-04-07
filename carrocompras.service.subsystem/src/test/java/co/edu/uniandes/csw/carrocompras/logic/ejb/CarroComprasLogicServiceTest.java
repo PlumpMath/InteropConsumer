@@ -67,7 +67,7 @@ public class CarroComprasLogicServiceTest {
 		for(int i=0;i<3;i++){
 			CarroComprasDTO pdto=new CarroComprasDTO();
 			pdto.setName(generateRandom(String.class));
-			pdto.setComprasId(generateRandom(Long.class));
+			pdto.setClienteId(generateRandom(Long.class));
 			pdto=carroComprasPersistence.createCarroCompras(pdto);
 			data.add(pdto);
 		}
@@ -77,7 +77,7 @@ public class CarroComprasLogicServiceTest {
 	public void createCarroComprasTest(){
 		CarroComprasDTO ldto=new CarroComprasDTO();
 		ldto.setName(generateRandom(String.class));
-		ldto.setComprasId(generateRandom(Long.class));
+		ldto.setClienteId(generateRandom(Long.class));
 		
 		
 		CarroComprasDTO result=carroComprasLogicService.createCarroCompras(ldto);
@@ -87,7 +87,7 @@ public class CarroComprasLogicServiceTest {
 		CarroComprasDTO pdto=carroComprasPersistence.getCarroCompras(result.getId());
 		
 		Assert.assertEquals(ldto.getName(), pdto.getName());	
-		Assert.assertEquals(ldto.getComprasId(), pdto.getComprasId());	
+		Assert.assertEquals(ldto.getClienteId(), pdto.getClienteId());	
 	}
 	
 	@Test
@@ -111,7 +111,7 @@ public class CarroComprasLogicServiceTest {
 		CarroComprasDTO ldto=carroComprasLogicService.getCarroCompras(pdto.getId());
         Assert.assertNotNull(ldto);
 		Assert.assertEquals(pdto.getName(), ldto.getName());
-		Assert.assertEquals(pdto.getComprasId(), ldto.getComprasId());
+		Assert.assertEquals(pdto.getClienteId(), ldto.getClienteId());
         
 	}
 	
@@ -130,7 +130,7 @@ public class CarroComprasLogicServiceTest {
 		CarroComprasDTO ldto=new CarroComprasDTO();
 		ldto.setId(pdto.getId());
 		ldto.setName(generateRandom(String.class));
-		ldto.setComprasId(generateRandom(Long.class));
+		ldto.setClienteId(generateRandom(Long.class));
 		
 		
 		carroComprasLogicService.updateCarroCompras(ldto);
@@ -139,7 +139,7 @@ public class CarroComprasLogicServiceTest {
 		CarroComprasDTO resp=carroComprasPersistence.getCarroCompras(pdto.getId());
 		
 		Assert.assertEquals(ldto.getName(), resp.getName());	
-		Assert.assertEquals(ldto.getComprasId(), resp.getComprasId());	
+		Assert.assertEquals(ldto.getClienteId(), resp.getClienteId());	
 	}
 	
 	public <T> T generateRandom(Class<T> objectClass){
