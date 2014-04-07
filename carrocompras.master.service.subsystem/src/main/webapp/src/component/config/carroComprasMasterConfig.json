@@ -1,0 +1,9 @@
+{
+    "displayName" : "CarroCompras",
+    "name" : "carrocompras",
+    "templateName" : "carrocompras",
+    "url" : "carrocompras.html",
+    "server": "localhost:8080",
+    "context": "/carrocompras.master.service.subsystem/webresources/CarroComprasMaster",
+    "el" : "#main"
+}
