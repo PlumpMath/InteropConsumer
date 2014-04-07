@@ -1,9 +1,7 @@
 package co.edu.uniandes.csw.product.logic.ejb;
 
-import javax.ejb.EJB;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
-import javax.inject.Inject;
 
 import javax.enterprise.inject.Default;
 
@@ -13,15 +11,11 @@ import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.WebResource;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.util.Enumeration;
 import java.util.List;
 import java.util.Properties;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.annotation.PostConstruct;
 import javax.ws.rs.core.MediaType;
 import org.codehaus.jackson.map.ObjectMapper;
@@ -55,7 +49,7 @@ public class ProductLogicService extends _ProductLogicService implements IProduc
                 output = new FileOutputStream("services.properties");
 
                 
-                prop.setProperty("url", "http://localhost:8080/producto.service.subsystem.web");
+                prop.setProperty("url", URL_SERVICIO);
 
           
                 prop.store(output, null);
